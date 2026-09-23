@@ -1,0 +1,93 @@
+---
+layout: base.njk
+title: Veerly — Il tuo negozio, sempre aperto online
+---
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">{{ site.hero.eyebrow }}</span>
+    <h1>{{ site.hero.title_pre }}<em>{{ site.hero.title_em }}</em>{{ site.hero.title_post }}</h1>
+    <p>{{ site.hero.text }}</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="{{ site.whatsapp }}" target="_blank" rel="noopener">{{ site.hero.cta_primary }}</a>
+      <a class="btn btn-ghost-light" href="#come-funziona">Come funziona</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">{{ site.problem.eyebrow }}</span>
+      <h2>{{ site.problem.title }}</h2>
+      <p>{{ site.problem.text }}</p>
+    </div>
+    <div class="problem-stats">
+      {% for stat in site.problem.stats %}
+      <div class="problem-stat"><b>{{ stat.number }}</b><p>{{ stat.text }}</p></div>
+      {% endfor %}
+    </div>
+    <p class="problem-source">{{ site.problem.source }}</p>
+  </div>
+</section>
+
+<section class="section-cream" id="come-funziona">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">{{ site.how.eyebrow }}</span>
+      <h2>{{ site.how.title }}</h2>
+      <p>{{ site.how.text }}</p>
+    </div>
+    <div class="steps">
+      {% for step in site.how.steps %}
+      <div class="step-card">
+        <div class="step-num">{{ loop.index }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="perche">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">{{ site.why.eyebrow }}</span>
+      <h2>{{ site.why.title }}</h2>
+    </div>
+    <div class="why-grid">
+      {% for item in site.why.items %}
+      <div class="why-card"><div class="dot"></div><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-cream">
+  <div class="wrap portfolio">
+    <div>
+      <span class="portfolio-badge"><span class="dot"></span>{{ site.approach.badge }}</span>
+      <h2>{{ site.approach.title }}</h2>
+      <p style="color:#5A5470; margin-top:14px; font-size:1.02rem;">{{ site.approach.text }}</p>
+      <div class="portfolio-stats">
+        {% for stat in site.approach.stats %}
+        <div class="stat"><b>{{ stat.number }}</b><span>{{ stat.text }}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="portfolio-shot" style="background:var(--indigo); padding:48px 32px; text-align:center;">
+      <p style="font-family:'Sora'; font-weight:700; font-size:1.4rem; color:var(--white); line-height:1.4;">{{ site.approach.quote }}</p>
+      <a class="btn btn-primary" style="margin-top:24px;" href="{{ site.whatsapp }}" target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" id="contatti">
+  <div class="wrap">
+    <span class="eyebrow">{{ site.cta_final.eyebrow }}</span>
+    <h2>{{ site.cta_final.title }}</h2>
+    <p>{{ site.cta_final.text }}</p>
+    <a class="btn btn-primary" href="{{ site.whatsapp }}" target="_blank" rel="noopener">{{ site.cta_final.cta }}</a>
+    <p style="color:#C7C2DB; margin-top:22px; font-size:0.95rem;">Oppure chiama direttamente il <strong style="color:var(--white);">{{ site.phone }}</strong></p>
+  </div>
+</section>
