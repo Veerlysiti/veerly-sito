@@ -1,0 +1,63 @@
+{
+    "whatsapp": "https://wa.me/393481477307",
+    "phone": "+39 348 147 7307",
+    "hero": {
+          "eyebrow": "Siti web per attività locali",
+          "title_pre": "Il tuo negozio, ",
+          "title_em": "sempre aperto",
+          "title_post": " online.",
+          "text": "Costruiamo il sito del tuo locale gratis, su misura per la tua attività. Paghi solo 29€/mese per hosting, dominio e modifiche — lo stesso costo che avresti comunque con qualsiasi altro sito, anche senza pagare nulla per realizzarlo.",
+          "cta_primary": "Richiedi la tua anteprima gratis"
+    },
+    "problem": {
+          "eyebrow": "Perché conta davvero",
+          "title": "Nel 2026, se non sei online, per molti tuoi clienti non esisti",
+          "text": "Non è più solo Google. Oggi le persone chiedono consiglio anche all'intelligenza artificiale — e se la tua attività non ha una presenza online, semplicemente non viene proposta.",
+          "stats": [
+                  { "number": "~80%", "text": "di chi cerca un'attività dallo smartphone la visita di persona entro 24 ore: chi non si fa trovare in quel momento, perde quasi sempre il cliente." },
+                  { "number": "45%", "text": "dei consumatori nel 2026 usa strumenti come ChatGPT per trovare attività locali — erano solo il 6% l'anno prima. Senza presenza online, questi strumenti non hanno nulla da consigliare su di te." },
+                  { "number": "62%", "text": "delle persone evita un'attività se trova informazioni sbagliate o assenti online: orari, indirizzo, contatti devono essere chiari e facili da trovare." }
+          ],
+          "source": "Fonti: BrightLocal Local Consumer Review Survey 2026, Shopify, AIOSEO."
+    },
+    "how": {
+          "eyebrow": "Come funziona",
+          "title": "Dal primo messaggio al sito online, senza pensieri",
+          "text": "Tre passaggi, zero competenze tecniche richieste da parte tua.",
+          "steps": [
+                  { "title": "Ci racconti la tua attività", "text": "Nome, foto, menù o servizi, orari: bastano pochi messaggi su WhatsApp per darci tutto il necessario." },
+                  { "title": "Costruiamo il tuo sito, gratis", "text": "In pochi giorni hai un sito vetrina curato, pensato apposta per la tua attività — nessun costo di realizzazione." },
+                  { "title": "Vai online", "text": "Paghi solo 29€/mese, che coprono hosting, dominio e piccole modifiche future — una spesa che avresti comunque, qualunque sia il sito che scegli." }
+          ]
+    },
+    "why": {
+          "eyebrow": "Perché Veerly",
+          "title": "Pensato per chi manda avanti un'attività vera",
+          "items": [
+                  { "title": "Gratis davvero", "text": "Nessun costo di realizzazione: paghi solo hosting e dominio, come faresti comunque con qualsiasi sito." },
+                  { "title": "Veloce", "text": "Giorni, non mesi: un metodo di lavoro snello e diretto, senza rallentamenti inutili." },
+                  { "title": "Su misura", "text": "Ogni sito è pensato per il locale specifico: foto vere, menù vero, nessun modello generico riciclato." },
+                  { "title": "Zero pensieri tecnici", "text": "Non devi installare nulla né imparare nulla: ti seguiamo noi in ogni passaggio, anche dopo la pubblicazione." }
+          ]
+    },
+    "approach": {
+          "badge": "Il nostro approccio",
+          "title": "Parli sempre con chi realizza davvero il tuo sito",
+          "text": "Niente call center, niente ticket anonimi: quando scrivi hai una persona vera dall'altra parte, che segue il tuo progetto dall'inizio alla fine. Prezzo fisso e trasparente, nessuna sorpresa in fattura, e ti seguiamo anche dopo la pubblicazione del sito per qualsiasi modifica.",
+          "stats": [
+                  { "number": "1:1", "text": "ti segue una persona, non un ticket" },
+                  { "number": "29€", "text": "al mese, tutto incluso" },
+                  { "number": "0€", "text": "costo di realizzazione" }
+          ],
+          "quote": "\"Ti rispondo io di persona, dal preventivo fino all'ultima modifica.\""
+    },
+    "cta_final": {
+          "eyebrow": "Iniziamo",
+          "title": "Pronto a portare la tua attività online?",
+          "text": "Scrivici su WhatsApp: ti mandiamo un'anteprima gratuita del tuo sito, senza impegno. Il sito è gratis — paghi solo 29€/mese per hosting, dominio e modifiche, la stessa spesa che avresti comunque con qualunque altro sito.",
+          "cta": "Contattaci su WhatsApp"
+    },
+    "footer": {
+          "text": "© 2026 Veerly — Il tuo negozio, sempre aperto online."
+    }
+}
