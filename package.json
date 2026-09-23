@@ -1,0 +1,12 @@
+{
+    "name": "veerly-site",
+    "version": "1.0.0",
+    "description": "Sito veerly.it - generato con Eleventy, editabile via Decap CMS",
+    "scripts": {
+          "build": "eleventy",
+          "serve": "eleventy --serve"
+    },
+    "devDependencies": {
+          "@11ty/eleventy": "^3.0.0"
+    }
+}
