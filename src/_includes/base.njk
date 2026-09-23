@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title or "Veerly — Il tuo negozio, sempre aperto online" }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#4B3F8F;
+    --indigo-dark:#332B63;
+    --coral:#FF6A3D;
+    --coral-dark:#B8431F;
+    --cream:#F7F3EE;
+    --ink:#211C3D;
+    --white:#FFFFFF;
+    --radius:16px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  html{overflow-x:hidden;}
+  body{font-family:'Manrope', sans-serif; color:var(--ink); background:var(--white); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  h1,h2,h3{font-family:'Sora', sans-serif; font-weight:700; line-height:1.15;}
+  h2{font-size:clamp(1.8rem, 3.6vw, 2.6rem);}
+  .eyebrow{
+    display:inline-block; font-family:'Sora'; font-weight:600; font-size:0.8rem;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--coral); margin-bottom:10px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; font-family:'Sora'; font-weight:600;
+    font-size:0.95rem; padding:14px 28px; border-radius:999px; border:2px solid transparent;
+    cursor:pointer; transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:focus-visible{outline:3px solid var(--coral); outline-offset:3px;}
+  .btn-primary{background:var(--coral); color:var(--white); box-shadow:0 10px 24px rgba(255,106,61,0.3);}
+  .btn-primary:hover{background:var(--coral-dark);}
+  .btn-outline{border-color:var(--indigo); color:var(--indigo);}
+  .btn-outline:hover{background:var(--indigo); color:var(--white);}
+  .btn-ghost-light{border-color:rgba(255,255,255,0.4); color:var(--white);}
+  .btn-ghost-light:hover{background:rgba(255,255,255,0.12);}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92); backdrop-filter:blur(6px); border-bottom:1px solid rgba(33,28,61,0.08);}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; height:78px;}
+  .logo-group{display:flex; align-items:center; gap:10px;}
+  .logo-group img{height:38px; width:38px; border-radius:50%; object-fit:cover;}
+  .logo-text{font-family:'Sora'; font-weight:700; font-size:1.15rem; color:var(--ink);}
+  .nav-links{display:flex; align-items:center; gap:28px;}
+  .nav-links a{font-weight:600; font-size:0.92rem; color:var(--ink);}
+  .nav-links a:hover{color:var(--coral);}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px;}
+  .burger span{width:24px; height:2.5px; background:var(--ink); border-radius:2px;}
+
+  .hero{position:relative; background:var(--indigo); overflow:hidden; padding:96px 0 90px;}
+  .hero::before{
+    content:""; position:absolute; top:-140px; right:-120px; width:480px; height:480px; border-radius:50%;
+    background:rgba(255,106,61,0.18); pointer-events:none;
+  }
+  .hero::after{
+    content:""; position:absolute; bottom:-160px; left:-100px; width:360px; height:360px; border-radius:50%;
+    background:rgba(255,255,255,0.06); pointer-events:none;
+  }
+  .hero-inner{position:relative; max-width:680px;}
+  .hero .eyebrow{color:#C9C2F0;}
+  .hero h1{color:var(--white); font-size:clamp(2.3rem, 5.2vw, 3.6rem);}
+  .hero h1 em{font-style:normal; color:var(--coral);}
+  .hero p{color:#DAD5F2; font-size:1.15rem; margin:20px 0 32px; max-width:540px;}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+
+  section{padding:88px 0;}
+  .section-cream{background:var(--cream);}
+  .section-head{max-width:640px; margin-bottom:48px;}
+  .section-head p{color:#5A5470; font-size:1.05rem; margin-top:12px;}
+
+  .problem-stats{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:40px; min-width:0;}
+  .problem-stat{min-width:0;}
+  .problem-stat{background:var(--cream); border-radius:var(--radius); padding:28px 22px;}
+  .problem-stat b{font-family:'Sora'; font-weight:800; font-size:2.1rem; color:var(--coral); display:block; margin-bottom:8px;}
+  .problem-stat p{font-size:0.92rem; color:#5A5470;}
+  .problem-source{font-size:0.78rem; color:#9089A8; margin-top:20px;}
+
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .step-card{background:var(--white); border:1px solid rgba(33,28,61,0.08); border-radius:var(--radius); padding:32px 26px;}
+  .step-num{
+    width:40px; height:40px; border-radius:50%; background:var(--indigo); color:var(--white);
+    font-family:'Sora'; font-weight:700; display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+  }
+  .step-card h3{font-size:1.15rem; margin-bottom:10px;}
+  .step-card p{color:#5A5470; font-size:0.95rem;}
+
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .why-card{padding:26px 20px; border-radius:var(--radius); background:var(--white); border:1px solid rgba(33,28,61,0.08);}
+  .why-card .dot{width:10px; height:10px; border-radius:50%; background:var(--coral); margin-bottom:16px;}
+  .why-card h3{font-size:1.02rem; margin-bottom:8px;}
+  .why-card p{font-size:0.9rem; color:#5A5470;}
+
+  .portfolio{display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center;}
+  .portfolio-shot{border-radius:var(--radius); overflow:hidden; box-shadow:0 24px 50px rgba(33,28,61,0.18); border:1px solid rgba(33,28,61,0.08);}
+  .portfolio-badge{
+    display:inline-flex; align-items:center; gap:8px; background:rgba(255,106,61,0.12); color:var(--coral-dark);
+    font-family:'Sora'; font-weight:600; font-size:0.8rem; padding:8px 16px; border-radius:999px; margin-bottom:16px;
+  }
+  .portfolio-badge .dot{width:8px; height:8px; border-radius:50%; background:var(--coral);}
+  .portfolio-stats{display:flex; gap:28px; margin-top:28px;}
+  .portfolio-stats .stat b{font-family:'Sora'; font-size:1.5rem; color:var(--indigo); display:block;}
+  .portfolio-stats .stat span{font-size:0.82rem; color:#5A5470;}
+
+  .cta-final{background:var(--ink); text-align:center;}
+  .cta-final .eyebrow{color:var(--coral);}
+  .cta-final h2{color:var(--white); max-width:620px; margin:0 auto;}
+  .cta-final p{color:#C7C2DB; margin:18px auto 34px; max-width:520px; font-size:1.05rem;}
+
+  footer{background:var(--indigo-dark); color:#B9B2E0; padding:40px 0; font-size:0.88rem;}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  .footer-inner a{color:var(--white); font-weight:600;}
+
+  @media (max-width:900px){
+    .steps, .why-grid{grid-template-columns:1fr 1fr;}
+    .portfolio{grid-template-columns:1fr;}
+    .problem-stats{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .nav-links{display:none; position:absolute; top:78px; left:0; right:0; background:var(--white); flex-direction:column; align-items:flex-start; padding:8px 24px 20px; border-bottom:1px solid rgba(33,28,61,0.08);}
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:12px 0; width:100%; border-bottom:1px solid rgba(33,28,61,0.06);}
+    .burger{display:flex;}
+    .steps, .why-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo-group">
+      <img src="/assets/img/logo.png" alt="Logo Veerly">
+      <span class="logo-text">Veerly</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#come-funziona">Come funziona</a>
+      <a href="#perche">Perché Veerly</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a class="btn btn-primary" href="{{ site.whatsapp }}" target="_blank" rel="noopener" style="padding:10px 20px; font-size:0.85rem;">Contattaci</a>
+      <button class="burger" id="burgerBtn" aria-label="Apri il menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+{{ content | safe }}
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>{{ site.footer.text }}</div>
+    <a href="{{ site.whatsapp }}" target="_blank" rel="noopener">{{ site.phone }}</a>
+  </div>
+</footer>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burgerBtn.addEventListener('click', ()=>{
+    const isOpen = navLinks.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    link.addEventListener('click', (e)=>{
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+        navLinks.classList.remove('open');
+        burgerBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+</script>
+</body>
+</html>
